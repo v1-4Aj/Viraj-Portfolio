@@ -1,0 +1,221 @@
+/* 3 types of selectors
+1. using html tag - no special character
+2. using class names-(.)Dot needed as a prefix
+3.using id names - (#)Hash needed as a prefix
+*/
+:root{
+  --canvas-bg:#0c0c0e;
+  --card-bg:#121214;
+  --text-primary:#ffffff;
+  --text-secondary:#94a3b8;
+  --text-bright:#f1f5f9;
+  --card-border:#ffffff;
+   }/* root is a special character (selector) using -- tells the browser to create a central storage box for that specific color always written on start of project   */
+body.light-mode{
+  --canvas-bg:#f1f5f9;
+  --card-bg:#ffffff;
+  --text-primary:#0f172a;
+  --text-secondary:#475569;
+  --text-bright:#1e293b;
+  --card-border:#cbd5e1;
+}
+body{
+  background-color:var(--canvas-bg);
+  color:var(--text-primary);
+  
+}
+header{
+  padding : 20px;
+  background: var(--canvas-bg); 
+  text-align: center ;
+  color:var(--text-primary);
+  border-radius : 20px;
+  animation: slide-in 2s ease-in-out;
+   border: 4px solid var(--card-border);
+}
+header h2{
+background-image : linear-gradient(to right,#EF4444,#FBBF24);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  
+}
+nav ul{
+  display: flex;
+  justify-content : center;/*centers the list linked horizontally*/
+  align-items: center;/*centers the lindt linkd vertically*/
+  gap: 30px;
+  margin: 0px;
+  padding : 15px;
+  list-style : none;
+  flex-wrap : wrap;
+  border: 4px solid var(--card-border);
+  border-radius :20px;
+  /*felx wrap is used when words break becuase of small space so it helsp wrapping them and not breaking*/
+  padding : 1 rem;
+  /*hover means whenever we bring our cursor near link 
+  /* text decoration = none (underline on links will go away)*/
+}
+nav{
+  background-color:var(--card-bg);
+  border-radius : 12px;
+  margin-top:20px;
+}
+nav ul li{
+  padding : 6px;
+   margin: 10px;
+  
+}
+/*to make the transform and box-shadow work we have to use display inline block in the base case as the anchor tags are inline elements by default and do not accept transform or box shadow properly*/
+nav ul li a{
+  display: inline-block;
+  text-decoration : none;
+  color:var(--text-primary);
+  transition: transform 0.2s ease,box-shadow 0.2s ease;
+}
+nav ul li a:hover{
+  color : #F97316;
+  transform:translateY(-5px) translateX(7px);
+  box-shadow: 0 10px 20px rgba(239,68,68,0.5);
+  }
+/* margin , border , padding*/
+.section-block h2{
+  color:var(--text-primary);
+  font-size: 1.6rem;/* makes the title clear and bold*/
+  border-bottom: 3px solid#ffff
+  }
+.section-block{
+  background-color :var(--card-bg);
+  border-radius: 20px;/*rounded corners*/
+  padding: 25px;/* give inner content space */
+  margin-top:20px;/*clean separation between dashboards cards*/
+  margin-bottom: 15px;
+  border: 4px solid var(--card-border);
+}
+.section-block h3{
+  color:var(--text-bright); 
+  font-size: 1.4rem;/*relative value depends on parent intead of solid value rem*/
+  margin-top: 2.5rem;
+ 
+  
+}
+.section-block p{
+  color:var(--text-primary);
+  font-size:1rem;
+  margin : 4px;
+  
+}
+.section-block label{
+  color: var(--text-primary);
+}
+.section-block input,
+.section-block textarea{
+background-color:var(--canvas-bg);
+color:var(--text-primary);/* crisp white color when typing*/
+  border: 1px solid var(--card-border);/* solid helps make the border colored even when it is not clicked*/
+}
+.section-block button,
+.section-block input[type = "submit"]{
+ background-color: var(--canvas-bg);
+  color:var(--text-primary);
+  border: 1px solid var(--card-border);
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;/*changes the cursor to hand icon as it is default in links but not in buttons thats why we have to define it*/
+  transition : all 0.2s ease;
+  
+}
+.section-block button:hover,
+.section-block input[type="submit"]:hover{
+  background-color: #EF4444;
+  border-color: #EF4444;
+  color: ffffff;
+  }
+.edu-item {
+  border-left: 4px solid var(--card-border);
+  border-radius: 20px;
+  padding: 0.3rem;
+  margin: 10px;
+  transition: transform 0.2s ease,box-shadow 0.2s ease,border-color 0.2s ease;
+}
+.edu-item h3{
+  margin-top:7px;
+  margin-bottom: 8px;
+}
+.edu-item:hover{
+  transform:translateX(10px) translateY(-6px) ;/*x means x axis and y means y axis and browser take pos y downwards and neg upwards translate is used for animation*/
+  box-shadow: 0 10px 25px rgba(239,68,68,0.5);
+  /* 0 is x axis(keeps the glow perfectly centered does not lean left or right) 10px is y axis(pushes shadow down 10px) 25px(control softness high no means high scattering of pixels making hard shadow into smooth) 239 68 68 is color ,0.5 is visibility i.e 50%*/
+  border-color: #c2410c;
+  /*muje border color sirf hovering k time chaiye tha so what i did was base class mtlb edu-item mae border color fix krdia solid white and than hover mae color daaldia and one more thing base case mae maine border color 0.2s ease likha it is must everytime whenever we need smooth transition */
+}
+#toggle-theme{
+  position:fixed;
+  top:20px;
+  right:20px;
+  border-radius:12px;
+  animation: float 3s ease-in-out infinite;
+  z-index: 9999;
+  transfrom: translateZ(100px);
+  
+}
+/* keyframes is a custom flipbook animation it let us dictate exactly whtat an element should look like at specific percentage of the journey */
+@keyframes float{
+  0%,100%{
+    transform: translateY(0px);/*abs start and abs end element sit completely still at its defaul resting spot*/
+  }
+   50%{
+     transform: translateY(-20px);/*right in exact middle position of animation loop browser executes negative coordinate adjustment , subs 20px from top of canvas pulling element upward into the sky */
+   }
+}
+#admin{
+  display: none;
+}
+#user{
+  display: none;
+  /* both of them should not be visible by default therefore we used display NONE*/
+}
+@keyframes slide-in{
+  from{
+    opacity:0;
+    transform:translateX(50px);
+  }
+  to{
+    opacity:1;
+    transform:translateX(0px);
+  }
+}
+body{
+ perpective: 1200px;  /*Think of this like setting up a camera lens in front of your screen. In regular web design, websites are 2D (flat). By adding perspective, you tell the browser: "Turn this webpage into a 3D studio box. Objects are now sitting 1200 pixels away from the viewer's eyes." This allows elements to slant backward or push forward in true 3D depth space */
+overflow-x:hidden;  /* When you tilt a large container in 3D space, its corners can stick out sideways past the screen edges, forcing an ugly horizontal scrollbar to pop up. This rule tells the browser to automatically cut off any side overlap so the screen stays clean. */
+}
+#deck-wrapper{
+   box-sizing: border-box;
+  width: 100%;
+  transform-origin: center center ;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.16,1,0.3,1),opacity 0.6ease, border-radius 0.6s ease;
+  
+
+ 
+  /* This tells the wrapper box: "If my child items (like your education cards, header, or nav bar) have their own 3D animations or movements, don't flatten them out. Let them keep their own distinct depth layers." */,/* The cubic-bezier formula is a customized math curve that controls acceleration. Instead of a robotic, stiff movement, this curve acts like physical weight—it starts extremely fast and then cushions slowly to a soft stop.*/
+  will-change: transform,opacity;
+  
+
+  /*   will-change: transform,opacity;   This is a direct tip to your computer's graphics card (GPU). It warns the device: "Heads up! This box is about to animate its position and visibility constantly on scroll." The computer prepares memory ahead of time, ensuring your animation runs at a fluid 60 frames per second without lagging.
+   transform-origin: center top;    This defines the axis hinge point. It tells the browser: "Lock the top center of the website completely in place like a door hinge, and let the bottom swing backward." */
+}
+
+#deck-wrapper.is-scrolling{
+  transform: scale3d(0.95,0.95,1)translateY(-15px)
+  opacity: 0.85;
+  border-rdius: 24px;
+  box-shadow: 0  25x 50px rgba(0, 0, 0, 0.5);
+  /* 0 = Horizontal Offset (X-Axis)
+  30px = Vertical Offset (Y-Axis)
+  60px = Blur Radius (The Softness)  */
+}
+
+  
+  
+

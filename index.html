@@ -1,0 +1,92 @@
+
+<html lang="en">
+  <head>
+   
+    <link rel="stylesheet" href="./style.css">
+    
+    <title>MY PORTFOLIO</title>
+  </head>
+  <body>
+    <button id="toggle-theme">Toggle Theme</button>
+    <div id="deck-wrapper">
+    <header><!--container tag-->
+      <h2>VIRAJ SOLANKI</h2>
+      <P> "CSE Student & Aspiring Full-Stack Developer. Focused on crafting seamless Full-stack web applications with responsive interface.Driven by Hands on problem solving with A core interest in integrating intelligent AI agents and automation tools into modern web platforms" </P>
+    </header>
+    <nav><!--container tag-->
+    <ul>
+     <li> <a href="#education">EDUCATION</a></li> 
+      <li><a href="#"> PROJECTS</a></li> 
+      <li> <a href="#">EXTRA CURRICULAR</a></li> 
+      <li><a href="#contact-me"> CONTACT ME </a></li> 
+      <li> <a href="#Admin" id = "Admin-btn">ADMIN LOGIN </a></li> 
+    </ul>
+    </nav>
+    <section class ="section-block" id = "education"><!--container tag-->
+      <div>
+      <h2>EDUCATION</h2>
+      </div>
+        <div class="edu-item" >
+          <h3>BTECH CSE</h3>
+      <p>GANDHINAGAR INSTITUE OF TECHNOLOGY</p>
+      <p>2025-2029</p>
+      </div>
+      <div class="edu-item">
+        <h3>High School</h3>
+      <P>Savvy International School</P>
+      <P>PCM</P>
+      <P>2025</P>
+      </div>
+    </section>
+
+    <section class ="section-block" id = "contact-me"><!--container tag-->    <h2>Contact Me</h2>
+      
+      <form id="contact-me"><!--from validation-->
+        <div>
+        <label>Name:</label>
+        <input type = "text" id="input-name" >
+        </div>
+        <div>
+          <label>Email: </label>
+          <input type = "text" id="input-email" >
+           </div>
+        <div>
+          <label>Message</label>
+          <textarea id="input-message"> </textarea>
+        </div>
+        <div>
+          <button type ="submit">send</button>
+        </div>
+      </form>
+    </section>
+    <section class ="section-block" id = "Admin">
+   <h2>Admin login</h2>
+      <form id="Admin-form">
+        <div>
+          <label>Name:</label>
+          <input type = "text" id="username">
+        </div>
+        <div>
+          <label>password: </label>
+          <input type = "password" id="password">
+        </div>
+        <div>
+        <button type= "submit">Login </button>
+        </div>
+      </form>
+    </section>
+    <section class= "section-block" id= "user">
+      <h2>User response</h2>
+      <div id="user-messages">
+        
+        
+      </div>
+    </section>
+    </div>
+    <!-- <h2>Error handling demo</h2>
+        <button onclick="runbroken()">Run broken version</button>
+        <button onclick="runhandled()">run handled version </button> -->
+
+    <script src="./script.js"></script>
+  </body>
+</html>
